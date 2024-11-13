@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Layout</title>
+    
+    <style>
+            
+            body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50; 
+            color: #d0d0d0; 
+        }
+
+        
+        .top-bar {
+            background-color: #34495e; 
+            padding: 10px;
+            text-align: right;
+        }
+
+        .top-bar .top-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .top-bar .top-links a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .main-header {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo img {
+            height: 100px;
+            width:150;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 10px;
+            position: relative; 
+        }
+
+        .main-nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            background-color: white; 
+            color: black;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a.active {
+            border: 2px solid black; 
+        }
+
+        .main-nav {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        
+        .dropdown {
+            display: none; 
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 40px; 
+            z-index: 1;
+        }
+
+        .dropdown a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+    
+    .article {
+      text-align: center; 
+    }
+    .article-img {
+      max-width: 100%; 
+      height: auto; 
+      border: 2px solid black; 
+    }
+    .heading-font {
+      font-family: Arial, sans-serif; 
+      font-size: 1.5em;
+      font-weight: bold; 
+      color: olive; 
+    }
+  
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: White;
+
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 200%;
+            height: 500%;
+        }
+
+        .text-container {
+            flex: 1;
+            max-width:1000px;
+        }
+
+        .text-container h1 {
+            font-size: 36px;
+            color: #4a4a4a;
+            margin-bottom: 50px;
+        }
+
+        .text-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+</style>
+<body>
+    <header>
+
+        <div class="top-bar">
+          <div class="top-links">
+              <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}active{% endif %}">Agent Log-in</a>
+              <a href="{% url 'tech_support' %}" class="{% if request.path == '/tech_support/' %}active{% endif %}">Tech Support</a>
+              
+          </div>
+      </div>
+    
+      <header class="main-header">
+          <div class="logo">
+              <a href="index.html">
+      <img class="{% if request.path == '/home/' %}active{% endif %}" src=" ./img/logo2.png" alt="Logo">
+    </a>
+          </div>
+          <nav class="main-nav" style="background-color: white;">
+              <ul>
+                  <li><a href="index.html" class="{% if request.path == '/home/' %}active{% endif %}">Home</a></li>
+                  <li>
+                      <a href="javascript:void(0);" onclick="toggleDropdown()">Insights</a>
+                      <div class="dropdown" id="dropdownMenu">
+                        <a href="menu.html" >Wheat Yield</a>
+                        <a href='soybean.html'>Yield Estimation</a>
+                      </div>
+                  </li>
+    
+                  <li><a href="about_us.html">About Us</a></li>i>
+              </ul>
+          </nav>
+      </header>
+    
+      <script>
+          // Function to toggle the dropdown menu
+          function toggleDropdown() {
+              var dropdownMenu = document.getElementById("dropdownMenu");
+              dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+          }
+    
+          // Close the dropdown menu if clicked outside
+          window.onclick = function(event) {
+              if (!event.target.matches('.main-nav ul li a')) {
+                  var dropdownMenu = document.getElementById("dropdownMenu");
+                  if (dropdownMenu.style.display === "block") {
+                      dropdownMenu.style.display = "none";
+                  }
+              }
+          }
+      </script>
+      </header>
+    
+<div class="text-image-container" style="display: flex; align-items: center;">
+    <div class="text-container" style="flex: 1; padding: 0 50px 0 70px;;">
+        <h1 style="color: Black;">Cotton</h1>
+        <p>To estimate cotton yield using plant count and NDVI, the first step is to use deep learning for object detection to count the number of cotton plants. A model trained on annotated images of cotton fields where individual plants are labeled with bounding boxes. After fine-tuning the model on this dataset, it can accurately detect and count plants in new images. This plant count provides a crucial metric for estimating potential yield, as the number of plants directly influences the yield output.</p>
+        <p>NDVI (Normalized Difference Vegetation Index) values can be calculated from multispectral or satellite imagery to assess the health and vigor of the plants. NDVI values, which range from -1 to 1, help quantify vegetation health, with higher values indicating better plant health and, in turn, higher potential yields. By combining plant count with average NDVI values for the field, you can model and predict cotton yield, using statistical or machine learning approaches to correlate these factors with historical yield data. This integration of object detection and NDVI enhances the precision of yield estimations..</p>
+        <p>the total estimated number of bolls is multiplied by the average weight of each cotton boll to calculate the overall yield. The weight of bolls can either be obtained from field measurements or existing agricultural data. Therefore, the final yield estimation is derived by multiplying the plant count by the number of bolls per plant and then by the average boll weight. This process combines field-based object detection with NDVI-driven health metrics, providing a comprehensive and data-driven estimate of cotton yield.</p>
+    </div>
+    <div class="image-container" style="flex: 1;">
+        <img src="./img/Cotton_acc.png" alt="Product Image" style="max-width: 100%; height: auto;">
+    </div>
+</div>
+   <div class="image-container" style="flex: 1;">
+        <img src="./img/cotton_graph.png" alt="Product Image">
+    </div>
+</body>body>

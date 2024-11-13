@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Layout</title>
+    
+    <style>
+            
+            body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50; /* Dark gray background */
+            color: #d0d0d0; /* Light gray font color for contrast */
+        }
+
+        /* Top bar styling */
+        .top-bar {
+            background-color: #34495e; /* Slightly different gray for top bar */
+            padding: 10px;
+            text-align: right;
+        }
+
+        .top-bar .top-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .top-bar .top-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main header styling */
+        .main-header {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo img {
+            height: 100px;
+            width:150;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 10px;
+            position: relative; /* Ensure dropdown is positioned correctly */
+        }
+
+        .main-nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            background-color: white; /* Assuming this is your preferred font color */
+            color: black;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a.active {
+            border: 2px solid black; /* Optional: add border for active link */
+        }
+
+        .main-nav {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            padding: 10px 0;
+            border-radius: 5px;
+            top: 40px; /* Position the dropdown below the parent link */
+            z-index: 1;
+        }
+
+        .dropdown a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+    
+    .article {
+      text-align: center; /* Center contents horizontally */
+    }
+    .article-img {
+      max-width: 100%; /* Ensure the image fits within the container */
+      height: auto; /* Maintain aspect ratio */
+      border: 2px solid black; /* Optional border */
+    }
+    .heading-font {
+      font-family: Arial, sans-serif; /* Ensure the font is Arial */
+      font-size: 1.5em; /* Adjust font size as needed */
+      font-weight: bold; /* Apply bold font weight */
+      color: olive; /* Set text color */
+    }
+  
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: White;
+
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 200%;
+            height: 500%;
+        }
+
+        .text-container {
+            flex: 1;
+            max-width:1000px;
+        }
+
+        .text-container h1 {
+            font-size: 36px;
+            color: #4a4a4a;
+            margin-bottom: 50px;
+        }
+
+        .text-container p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+</style>
+<body>
+<section>
+  <article>
+    <h1>Contact Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" id="button">
+        </form>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <div class="videowrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124942.95773192234!2d67.0011364!3d24.8607343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2spt!4v1662384760663!5m2!1sen!2spt"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+
+
+
+
+  </article>
+</section>
+</body>
